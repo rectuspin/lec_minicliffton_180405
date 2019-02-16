@@ -1,0 +1,20 @@
+<h1>카테고리2: 연습 페이지</h1>
+<a href="/home/index">전체 글 보기</a><br>
+--------------------------------------------<br>
+
+<%@posts.each do |x|%>
+    <% if x.option == "1" %>
+        이 글은 비밀글입니다.
+    <br>--------------------------------------------<br>
+    <%else%>
+    <bold>이름</bold>:&emsp;  &nbsp;&nbsp;&nbsp;&nbsp; <%=x.name%><br>
+    <bold>제목</bold>:&emsp;  &nbsp;&nbsp;&nbsp;&nbsp; <%=x.title%><br>
+    <bold>내용</bold>:&emsp;  &nbsp;&nbsp;&nbsp;&nbsp; <%=x.content%><br>
+    <bold>카테고리2</bold>: <%=x.category2%><br>
+    <a href="/home/destroy/<%=x.id%>">삭제</a>
+    <a href="/home/edit/<%=x.id%>">수정</a>
+    <br>--------------------------------------------<br>
+    <%end%>
+<%end%>
+
+<br><a href="/home/new">새로운 글 추가</a>
